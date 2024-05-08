@@ -1,0 +1,59 @@
+version: '3'
+
+services:
+###> shopware/core ###
+  database:
+    image: mysql:${MYSQL_VERSION:-8}-oracle
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-shopware}
+      # You should definitely change the password in production
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-!ChangeMe!}
+      MYSQL_USER: ${MYSQL_USER:-shopware}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-!ChangeMe!}
+    volumes:
+      - db-data:/var/lib/mysql:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/mysql:rw
+###< shopware/core ###
+
+###> shopware/elasticsearch ###
+  opensearch:
+    image: opensearchproject/opensearch:2
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    environment:
+      discovery.type: single-node
+      plugins.security.disabled: 'true'
+###< shopware/elasticsearch ###
+
+###> doctrine/doctrine-bundle ###
+  database:
+    image: postgres:${POSTGRES_VERSION:-16}-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-app}
+      # You should definitely change the password in production
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-!ChangeMe!}
+      POSTGRES_USER: ${POSTGRES_USER:-app}
+    healthcheck:
+      test: ["CMD", "pg_isready -U ${POSTGRES_USER:-app}"]
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    volumes:
+      - database_data:/var/lib/postgresql/data:rw
+      # You may use a bind-mounted host directory instead, so that it is harder to accidentally remove the volume and lose all your data!
+      # - ./docker/db/data:/var/lib/postgresql/data:rw
+###< doctrine/doctrine-bundle ###
+
+volumes:
+###> shopware/core ###
+  db-data:
+###< shopware/core ###
+
+###> shopware/elasticsearch ###
+  opensearch-data:
+###< shopware/elasticsearch ###
+
+###> doctrine/doctrine-bundle ###
+  database_data:
+###< doctrine/doctrine-bundle ###

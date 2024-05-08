@@ -1,0 +1,75 @@
+{
+    "license": "proprietary",
+    "type": "project",
+    "require": {
+        "composer-runtime-api": "^2.0",
+        "doctrine/dbal": "^3",
+        "doctrine/doctrine-bundle": "^2.12",
+        "doctrine/doctrine-migrations-bundle": "^3.3",
+        "doctrine/orm": "^3.1",
+        "shopware/administration": "*",
+        "shopware/core": "v6.6.1.2",
+        "shopware/elasticsearch": "*",
+        "shopware/storefront": "*",
+        "symfony/flex": "~2",
+        "symfony/webpack-encore-bundle": "^2.1",
+        "twig/extra-bundle": "3.8.*",
+        "twig/intl-extra": "~3.8.0"
+    },
+    "repositories": [{
+            "type": "path",
+            "url": "custom/plugins/*",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "custom/plugins/*/packages/*",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "custom/static-plugins/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "auto-scripts": {
+            "assets:install": "symfony-cmd"
+        },
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ]
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": true,
+            "endpoint": [
+                "https://raw.githubusercontent.com/shopware/recipes/flex/main/index.json",
+                "flex://defaults"
+            ]
+        }
+    },
+    "require-dev": {
+        "symfony/stopwatch": "^7.0",
+        "symfony/web-profiler-bundle": "^7.0"
+    }
+}

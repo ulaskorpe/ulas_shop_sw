@@ -1,0 +1,43 @@
+bin/console theme:create SOMETHEME
+bin/console plugin:install --activate SOMETHEME
+bin/console theme:change
+bin/console theme:compile
+
+{% execute smt  %}   : for in 
+{{ print smt | filter }}  {# comment #}
+for user in users  ... endfor   , if users|length > 0 ... endif
+block blockname ... endblock 
+
+twig functions 
+parent() , dump() , random(N) , date()  ,const()
+
+{{ item.dateTime | date({hour: '2-digit',minute : '2-digit'}) }}
+
+{{  constant('DIR_SEPARATOR) }}
+
+{%  sw_include '@some/file/a.html.twig'  %}
+
+{%  sw_icon 'marketing' style { .. }  %}
+
+@Route('/ / /',name='smt.there', .. )
+
+{{ path('front.end.some.file) }}
+
+{{ seoUrl ()  }}
+
+sw_extends  :  inherit a template and extend it block .. endblock
+
+sw_include : create a new template and include another template
+
+{% sw_include '@some twig' with { 'var' : value , 'var2' : another value ... } %}
+
+{%  sw_include '@some twig'  ignore missing  %} 
+
+{%  sw_icon  'arrow-down'  style { } %}
+
+{%  sw_thumbnails 'gallery_images' with { media : image} %}
+
+striptags , trim , trans , capitalize , upper ,lower , number_format, raw, truncate 
+
+sw_sanitize  : 
+sw_encode_media_url :  

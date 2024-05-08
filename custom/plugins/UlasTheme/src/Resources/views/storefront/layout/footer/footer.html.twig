@@ -1,0 +1,22 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+  {% block layout_footer_navigation_columns %}
+ <div class="col-md-4 footer-column">
+    <div class="footer-column-headline footer-headline">THIS IS THE WAY</div>
+    <div class="footer-column-content-inner">
+    
+    <dl>
+        <dt>VAT ID</dt>
+        <dd>  {{ context.salesChannel.customFields.company_data__vatid }} </dd>
+    </dl>
+    </div>
+ </div>
+{% endblock %} 
+{% block layout_footer_payment_shipping_logos %}
+ {{ parent() }}
+   
+{% endblock %}
+
+      {% block layout_footer_navigation_hotline_content %}
+ {{ parent() }}
+      {% endblock %}

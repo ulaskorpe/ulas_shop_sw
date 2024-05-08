@@ -1,0 +1,35 @@
+{% sw_extends '@Storefront/storefront/page/account/profile/personal.html.twig' %}
+
+{% block page_account_profile_personal_fields_birthday_selects %}
+ <div class="row">
+ {% if data.birthday %}
+ 
+                {% set birthdate = data.birthday|date('Y-m-d') %}
+                {% set birthdateDay = data.birthday|date('d') %}
+                {% set birthdateMonth = data.birthday|date('m') %}
+                {% set birthdateYear = data.birthday|date('Y') %}
+                {% set datePickerPluginOptions =  {enableTime : false , dateFormat :"Y-m-d" , selectors : { 
+                    inputDay : "#birthdayDay",
+                    inputMonth : "#birthdayMonth",
+                    inputYear : "#birthdayYear",
+                } } %}
+    <div class="col-md-3">
+                <input name="birthday" onchange="parseVal()" class="form-control"   value="{{ birthdate }}" id="birthday" data-date-picker-options='{{ datePickerPluginOptions|json_encode  }}'
+                 data-date-picker>
+                <input type="hidden" name="birthdayDay" value="{{ birthdateDay }}" id="birthdayDay">
+                <input type="hidden" name="birthdayMonth" value="{{ birthdateMonth }}" id="birthdayMonth">
+                <input type="hidden" name="birthdayYear" value="{{ birthdateYear }}" id="birthdayYear">
+                </div>
+
+                <script>
+                function parseVal(){
+                    let birthday = document.getElementById('birthday').value;
+                    var exploded = birthday.split("-");
+                  document.getElementById('birthdayDay').value = exploded[2];
+                  document.getElementById('birthdayMonth').value = exploded[1];
+                  document.getElementById('birthdayYear').value = exploded[0];
+                }
+                </script>
+            {% endif %}
+ </div>
+{% endblock %}
