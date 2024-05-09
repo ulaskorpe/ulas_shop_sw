@@ -1,6 +1,6 @@
 /.idea
 /vendor/
-
+/custom/plugins/UlasTheme/src/Resources/app/storefront/node_modules/*
 ###> shopware/core ###
 .env.local
 .env.local.php
@@ -23,6 +23,7 @@ public/asset-manifest.json
 /node_modules/
 /vendor/*
 /public/build/
+
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###

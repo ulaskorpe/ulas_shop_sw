@@ -41,3 +41,6 @@ striptags , trim , trans , capitalize , upper ,lower , number_format, raw, trunc
 
 sw_sanitize  : 
 sw_encode_media_url :  
+
+
+ D:\www\ulas_shop\custom\plugins\UlasTheme\src\Resources\app\storefront
