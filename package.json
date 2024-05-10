@@ -26,7 +26,6 @@
     "at-least-node": "^1.0.0",
     "autoprefixer": "^10.4.19",
     "axios": "^0.21.4",
-    "babel-loader": "^8.3.0",
     "babel-plugin-dynamic-import-node": "^2.3.3",
     "babel-plugin-polyfill-corejs2": "^0.4.11",
     "babel-plugin-polyfill-corejs3": "^0.10.4",
@@ -89,7 +88,6 @@
     "cosmiconfig": "^9.0.0",
     "cross-spawn": "^6.0.5",
     "css-declaration-sorter": "^6.4.1",
-    "css-loader": "^6.11.0",
     "css-minimizer-webpack-plugin": "^3.4.1",
     "css-select": "^4.3.0",
     "css-tree": "^1.1.3",
@@ -511,9 +509,9 @@
     "wbuf": "^1.7.3",
     "wcwidth": "^1.0.1",
     "webidl-conversions": "^3.0.1",
-    "webpack": "^5.91.0",
     "webpack-bundle-analyzer": "^4.10.2",
     "webpack-chain": "^6.5.1",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-middleware": "^5.3.4",
     "webpack-dev-server": "^4.15.2",
     "webpack-merge": "^5.10.0",
@@ -540,6 +538,14 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/preset-env": "^7.24.5",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^7.1.1",
+    "style-loader": "^4.0.0",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^5.91.0"
+  }
 }

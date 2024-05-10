@@ -13,7 +13,9 @@
   ],
   "script": [
     "@Storefront",
-    "app/storefront/dist/storefront/js/ulas-theme.js"
+    "app/storefront/dist/storefront/js/ulas-theme/new_theme.js"
+
+   
   ],
   "asset": [
     "@Storefront",

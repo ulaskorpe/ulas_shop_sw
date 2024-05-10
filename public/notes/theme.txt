@@ -44,3 +44,10 @@ sw_encode_media_url :
 
 
  D:\www\ulas_shop\custom\plugins\UlasTheme\src\Resources\app\storefront
+
+
+ app/storefront/dist/storefront/ * .js
+
+
+ ///// webpack 
+ 

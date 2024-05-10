@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9cfc551da9c22ef1fc87abdbc37c055",
+    "content-hash": "1d3c893bb5049953e43948dfaabb81ff",
     "packages": [
         {
             "name": "brick/math",
@@ -5320,6 +5320,55 @@
                 }
             ],
             "time": "2023-12-11T16:03:32+00:00"
+        },
+        {
+            "name": "shopware-pwa/shopware-pwa",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shopware/SwagShopwarePwa.git",
+                "reference": "dc281b8682b66fd2846d2652c0ae9dbbbfa226fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shopware/SwagShopwarePwa/zipball/dc281b8682b66fd2846d2652c0ae9dbbbfa226fd",
+                "reference": "dc281b8682b66fd2846d2652c0ae9dbbbfa226fd",
+                "shasum": ""
+            },
+            "require": {
+                "shopware/core": "~6.6.0",
+                "shopware/storefront": "~6.6.0"
+            },
+            "default-branch": true,
+            "type": "shopware-platform-plugin",
+            "extra": {
+                "shopware-plugin-class": "SwagShopwarePwa\\SwagShopwarePwa",
+                "plugin-icon": "src/Resources/config/plugin.png",
+                "label": {
+                    "de-DE": "PWA Integration",
+                    "en-GB": "PWA Integration"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SwagShopwarePwa\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "shopware AG"
+                }
+            ],
+            "description": "Shopware PWA extension",
+            "support": {
+                "issues": "https://github.com/shopware/SwagShopwarePwa/issues",
+                "source": "https://github.com/shopware/SwagShopwarePwa/tree/master"
+            },
+            "time": "2024-03-27T08:49:36+00:00"
         },
         {
             "name": "shopware/administration",
@@ -11262,7 +11311,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "shopware-pwa/shopware-pwa": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
